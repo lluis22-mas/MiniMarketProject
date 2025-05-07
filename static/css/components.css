@@ -13,6 +13,7 @@ a.boton-faq {
 .boton-faq {
   display: inline-flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
   background-color: var(--verde);
   color: var(--blanco);
