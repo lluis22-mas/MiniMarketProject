@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Alta nuevo producto - Mini Mercado{% endblock %}
+
+{% block content %}
+
+<section class="alta-producto contenedor-seccion">
+  <h1>Alta nuevo producto</h1>
+
+  <div class="formulario-alta-producto" style="display: flex; gap: 2rem; flex-wrap: wrap;">
+
+    <form action="{{ url_for('alta_producto') }}" method="POST" class="formulario" style="flex: 1; min-width: 300px;">
+      <input type="text" name="nombre" placeholder="Nombre del producto" required>
+
+      <textarea name="descripcion" placeholder="Descripción del producto" rows="4" required></textarea>
+
+      <select name="tipo" required>
+        <option value="">¿Es fruta o verdura?</option>
+        <option value="fruta">Fruta</option>
+        <option value="verdura">Verdura</option>
+      </select>
+
+      <input type="text" name="precio" placeholder="Precio €/kg" required>
+      <input type="text" name="imagen" placeholder="Ruta de imagen (ej. zanahoria.jpg)" required>
+
+      <button type="submit">Subir producto</button>
+    </form>
+
+    <div class="imagen-alta" style="flex: 1; min-width: 300px;">
+      <img src="{{ url_for('static', filename='img/index/nuevoproducto.jpg') }}" alt="Imagen alta producto" style="width: 100%; border-radius: 10px;">
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
+

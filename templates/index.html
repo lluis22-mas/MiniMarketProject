@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio - Mini Mercado Lloseta Haji{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero" id="inicio"> 
+  <h1>Mini Mercado Lloseta Hajji</h1>
+  <p>Fruta y verdura de proximidad</p>
+  <img class="fachada" src="{{ url_for('static', filename='img/index/minimarket.jpg') }}" alt="Fachada del Mini Mercado" />
+</section>
+
+<!-- SECCIONES PRINCIPALES -->
+<section class="secciones-principales" id="frutas">
+  <h2>Secciones principales</h2>
+  <div class="grid-secciones">
+
+    <a href="{{ url_for('verduras') }}" class="tarjeta-link">
+      <article class="tarjeta">
+        <img src="{{ url_for('static', filename='img/index/verduras.jpg') }}" alt="Verduras" />
+        <h3>Verduras</h3>
+        <p>Verduras frescas y variadas</p>
+      </article>
+    </a>
+
+    <a href="{{ url_for('frutas') }}" class="tarjeta-link">
+      <article class="tarjeta">
+        <img src="{{ url_for('static', filename='img/index/fruta.jpg') }}" alt="Frutas" />
+        <h3>Fruta</h3>
+        <p>Las mejores frutas de temporada</p>
+      </article>
+    </a>
+
+    <a href="#" class="tarjeta-link">
+      <article class="tarjeta">
+        <img src="{{ url_for('static', filename='img/index/espacioclientes.jpg') }}" alt="Espacio Clientes" />
+        <h3>Espacio clientes</h3>
+        <p>Consulta tus compras y pedidos</p>
+      </article>
+    </a>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <h2>FAQ</h2>
+  <div class="contenido-faq">
+    <div class="preguntas">
+      <p><strong>¿Dónde nos ubicamos?</strong><br />Carrer de s'Avenc 14A, Lloseta</p>
+      <p><strong>¿Qué horarios tenemos?</strong><br />Lunes a sábado: 8:00 a 20:00</p>
+      <p><strong>¿Cómo puedo hacer un pedido?</strong><br />Puedes escribirnos por WhatsApp o visitar la tienda</p>
+      <div class="botones-faq">
+        <a href="https://wa.me/34678666444?text=Hola,%20tengo%20una%20pregunta" target="_blank" class="boton-faq">WhatsApp</a>
+        <a href="{{ url_for('faq') }}" class="boton-faq">FAQ</a>
+      </div>
+    </div>
+    <div class="imagen-faq">
+      <img src="{{ url_for('static', filename='img/index/faq.jpg') }}" alt="Persona comprando en mercado">
+    </div>
+  </div>
+</section>
+
+<!-- OTRAS SECCIONES -->
+<section class="otras-secciones" id="recetas">
+  <h2>Otras secciones de interés</h2>
+  <div class="grid-interes">
+
+    <a href="{{ url_for('recetas') }}" class="tarjeta-link tarjeta-interes-link">
+      <article class="tarjeta-interes">
+        <img src="{{ url_for('static', filename='img/index/recetas.jpg') }}" alt="Recetas" />
+        <h3>Recetas</h3>
+        <p>Encuentra inspiración saludable con nuestros productos</p>
+      </article>
+    </a>
+    
+    <a href="{{ url_for('quienessomos') }}" class="tarjeta-link tarjeta-interes-link">
+      <article class="tarjeta-interes">
+        <img src="{{ url_for('static', filename='img/index/conoce.jpg') }}" alt="¿Quiénes somos?" />
+        <h3>¿Quiénes somos?</h3>
+        <p>Conoce a nuestro equipo</p>
+      </article>
+    </a>
+
+  </div>
+</section>
+
+<!-- OPINIONES -->
+<section class="opiniones" id="opiniones">
+  <h2>Opiniones de nuestros clientes</h2>
+  <div class="grid-opiniones">
+    <blockquote>
+      <p>“Rápido y verduras muy frescas”</p>
+      <div class="autor-opinion">
+        <img src="{{ url_for('static', filename='img/index/juan.jpg') }}" alt="Foto de Juan">
+        <cite>Juan - 03/04/2025</cite>
+      </div>
+    </blockquote>
+    <blockquote>
+      <p>“Un local muy limpio”</p>
+      <div class="autor-opinion">
+        <img src="{{ url_for('static', filename='img/index/said.jpg') }}" alt="Foto de Said">
+        <cite>Said - 07/04/2025</cite>
+      </div>
+    </blockquote>
+    <blockquote>
+      <p>“Tienen de producto canario”</p>
+      <div class="autor-opinion">
+        <img src="{{ url_for('static', filename='img/index/miquel.jpg') }}" alt="Foto de Miquel">
+        <cite>Miquel - 10/04/2025</cite>
+      </div>
+    </blockquote>
+  </div>
+</section>
+
+{% endblock %}
+
+
+ 

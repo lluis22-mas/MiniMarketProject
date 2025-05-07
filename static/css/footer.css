@@ -1,0 +1,35 @@
+/* Footer  */
+
+.footer {
+  background-color: var(--verde);
+  color: var(--blanco);
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Redes sociales */
+.redes-sociales {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.redes-sociales a img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1); /* Hace el icono blanco */
+  transition: transform 0.2s ease;
+}
+
+.redes-sociales a img:hover {
+  transform: scale(1.2);
+}
+
+  

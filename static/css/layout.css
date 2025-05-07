@@ -1,0 +1,294 @@
+/* === Layout general === */
+.contenedor-header,
+.grid-secciones,
+.grid-interes,
+.grid-opiniones,
+.contenido-faq {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* Hero común */
+.hero {
+  text-align: left;
+  padding: 2rem 1rem;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--verde);
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--gris-texto);
+  margin-bottom: 1rem;
+}
+
+.hero img {
+  display: block;
+  margin: 2rem auto 0 auto;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 10px;
+}
+
+/* Header y grids  */
+.contenedor-header,
+.grid-secciones,
+.grid-interes,
+.grid-opiniones,
+.contenido-faq {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+
+
+/* FAQ en layout.css */
+
+.contenido-faq {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.contenido-faq .preguntas {
+  flex: 2;
+}
+
+.contenido-faq .imagen-faq {
+  flex: 1;
+  max-width: 300px;
+}
+
+.contenido-faq .imagen-faq img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+/* Títulos de sección con mayor margen izquierdo */
+.secciones-principales h2,
+.faq h2,
+.otras-secciones h2,
+.opiniones h2
+ {
+  margin-left: 10rem;
+  color: var(--verde);
+  font-size: 2rem;
+}
+
+
+
+
+
+/* Grid de recetas centrado y con imágenes más reducidas */
+.grid-recetas {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 2rem;
+  justify-content: center;
+}
+
+.grid-recetas article {
+  width: 306px;
+  text-align: center;
+}
+
+.grid-recetas article img {
+  width: 100%;
+  height: 272px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Responsive para grid-recetas */
+@media (max-width: 1024px) {
+  .grid-recetas {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-recetas {
+    grid-template-columns: auto;
+  }
+}
+
+
+/* Espaciado general en secciones */
+section h1,
+section h2 {
+  margin: 3rem 0 1.5rem 0;
+}
+
+section p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  margin-left: 60px;
+}
+
+section img {
+  margin: 1.5rem 0;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+section a.boton-faq,
+section button,
+section input,
+section textarea {
+  margin: 1rem 0;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+}
+
+
+/* Contenedor reutilizable para secciones */
+.contenedor-seccion {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 7rem;
+}
+
+/* Ajuste visual para inputs, botones e imágenes grandes */
+section input,
+section textarea {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+section button,
+section a.boton-faq {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  background-color: var(--verde);
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Ajuste específico para títulos principales */
+section h1,
+section h2 {
+  margin-left: 50px;
+  color: #2B4B36;
+}
+
+
+/* Quiénes somos */
+.quienes-somos {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+.contenedor-quienes {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.texto-quienes {
+  flex: 1;
+  min-width: 300px;
+  margin-left: 60px;
+}
+
+.texto-quienes .formulario-contacto {
+  margin-top: 2rem;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.formulario-contacto .fila {
+  display: flex;
+  gap: 1rem;
+}
+
+.formulario-contacto .fila input {
+  flex: 1;
+}
+
+.formulario-contacto button {
+  padding: 0.7rem 1.5rem;
+  background-color: var(--verde);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.imagen-quienes {
+  flex: 1;
+  min-width: 300px;
+}
+
+.imagen-quienes img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Formulario añadir producto */
+
+.formulario-alta-producto {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.formulario input,
+.formulario textarea,
+.formulario select {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.formulario button {
+  padding: 0.7rem 1.5rem;
+  background-color: var(--verde);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}

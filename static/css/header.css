@@ -1,0 +1,90 @@
+/* Header  */
+
+.header {
+  background-color: var(--blanco);
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+
+/* Contenedor principal del header */
+.contenedor-header {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
+
+/* Navegación principal */
+.navegacion ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding-left: 0;
+  margin: 0;
+}
+
+.navegacion a {
+  position: relative;
+  text-decoration: none;
+  color: var(--gris-texto);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.navegacion a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--verde);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.navegacion a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Botones del header (login / carrito) */
+.acciones-header {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-login,
+.btn-carrito {
+  background-color: var(--verde);
+  color: var(--blanco);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login:hover,
+.btn-carrito:hover {
+  background-color: #1f3628;
+  transform: scale(1.05);
+}
+
+.btn-carrito img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}

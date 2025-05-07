@@ -1,0 +1,27 @@
+/* Variables (colores y fuentes) */
+
+:root {
+    --verde: #2B4B36;
+    --blanco: #ffffff;
+    --gris-claro: #d9d3d3;
+    --gris-texto: #524e4e;
+    --fuente-principal: 'Segoe UI', sans-serif;
+  }
+
+/* Reset general */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+/* Estilos base y elimina inconsistencias entre navegadores */
+
+  body {
+    font-family: var(--fuente-principal);
+    color: var(--gris-texto);
+    background-color: var(--blanco);
+    line-height: 1.6;
+  }
+

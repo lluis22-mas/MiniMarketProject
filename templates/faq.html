@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Preguntas Frecuentes - Mini Mercado{% endblock %}
+
+{% block content %}
+
+<section class="faq quienes-somos">
+  <div class="contenedor-quienes">
+
+    <div class="texto-quienes">
+      <h1>Preguntas frecuentes</h1>
+
+      <p><strong class="pregunta">¿Dónde nos ubicamos?</strong><br />
+      <span class="respuesta">Lloseta, calle Mestre Antoni Vidal, 43</span></p>
+
+      <p><strong class="pregunta">¿Qué horario tenemos?</strong><br />
+      <span class="respuesta">Todos los días de 9:00 - 20:00. Jueves cerrado.</span></p>
+
+      <p><strong class="pregunta">¿Cuándo puedo pasar a recoger mi pedido?</strong><br />
+      <span class="respuesta">Puedes pasar a por tu pedido en cuanto te llegue el mail de que lo tenemos listo.</span></p>
+
+      <p><strong class="pregunta">¿Qué métodos de pago aceptamos?</strong><br />
+      <span class="respuesta">Aceptamos pagos con tarjeta, Bizum y PayPal en nuestra tienda online. En la tienda física también puedes pagar en efectivo.</span></p>
+
+      <p><strong class="pregunta">¿Hacemos envíos a domicilio?</strong><br />
+      <span class="respuesta">Sí, realizamos entregas a domicilio en Lloseta y alrededores. Al hacer tu pedido, podrás seleccionar la opción de entrega y te indicaremos el tiempo estimado.</span></p>
+
+      <p><strong class="pregunta">¿Trabajamos con productos locales?</strong><br />
+      <span class="respuesta">Sí, siempre priorizamos frutas y verduras de proximidad para garantizar frescura y apoyar a los productores locales. También ofrecemos productos ecológicos y de temporada.</span></p>
+
+      <p><strong class="pregunta">¿Con cuánta antelación debo hacer mi pedido?</strong><br />
+      <span class="respuesta">Puedes hacer tu pedido en cualquier momento. Si lo realizas antes de las 17:00, estará listo el mismo día. Los pedidos hechos después de esa hora se prepararán para el día siguiente.</span></p>
+
+      <p><strong class="pregunta">¿Qué hago si tengo un problema con mi pedido?</strong><br />
+      <span class="respuesta">Si hay algún error o problema con tu pedido, contáctanos de inmediato a través de WhatsApp o llámanos, y lo solucionaremos lo antes posible. Queremos que quedes completamente satisfecho con tu compra.</span></p>
+
+      <a href="https://wa.me/34678666444?text=Hola,%20tengo%20una%20pregunta"
+         target="_blank"
+         class="boton-faq">Escríbenos por WhatsApp</a>
+    </div>
+
+    <div class="imagen-quienes">
+      <img src="{{ url_for('static', filename='img/index/faq2.jpg') }}" alt="Persona preguntando en el mercado">
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

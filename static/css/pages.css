@@ -1,0 +1,39 @@
+/* === opiniones.css === */
+
+/* Opiniones */
+.grid-opiniones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+blockquote {
+    background-color: var(--gris-claro);
+    padding: 1rem;
+    border-left: 5px solid var(--verde);
+    border-radius: 8px;
+    font-style: italic;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.autor-opinion {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.autor-opinion img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.autor-opinion cite {
+    font-style: normal;
+    color: var(--gris-texto);
+    font-weight: bold;
+    font-size: 0.9rem;
+}

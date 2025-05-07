@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}¿Quiénes somos? - Mini Mercado Lloseta Haji{% endblock %}
+
+{% block content %}
+
+<section class="quienes-somos">
+  <div class="contenedor-quienes">
+
+    <div class="texto-quienes">
+      <h1>¿Quiénes somos?</h1>
+      <p class="subtitulo">En Mini Mercado Lloseta Hajji.</p>
+      <p>
+        Somos una frutería local en Lloseta comprometida con ofrecerte las frutas y verduras más frescas, seleccionadas cuidadosamente para garantizar la mejor calidad. Apostamos por productos de proximidad y de temporada, asegurando siempre el mejor sabor en tu mesa. <br><br>
+        Ahora, además de atenderte en nuestra tienda física, ponemos a tu disposición nuestra tienda online, donde podrás realizar tus pedidos cómodamente y elegir entre entrega a domicilio o recogida en tienda. <br><br>
+        Queremos hacerte la vida más fácil mientras sigues disfrutando de lo mejor de nuestra tierra.
+      </p>
+
+      <form class="formulario-contacto">
+        <div class="fila">
+          <input type="text" placeholder="Nombre">
+          <input type="text" placeholder="Apellido">
+        </div>
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Escribe tu mensaje o consulta"></textarea>
+        <button type="submit" class="boton-faq">Enviar</button>
+      </form>
+    </div>
+
+    <div class="imagen-quienes">
+      <img src="{{ url_for('static', filename='img/index/quienes.jpg') }}" alt="Foto del dueño del mercado">
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

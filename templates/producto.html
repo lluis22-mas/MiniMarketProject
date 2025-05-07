@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ producto.nombre }} - Mini Mercado{% endblock %}
+
+{% block content %}
+
+<section class="detalle-producto">
+  <div class="contenedor-producto">
+
+    <div class="imagen-producto">
+      <img src="{{ url_for('static', filename='img/index/' + producto.imagen) }}" alt="{{ producto.nombre }}">
+    </div>
+
+    <div class="info-producto">
+      <h1>{{ producto.nombre }}</h1>
+      <p class="precio">{{ producto.precio }} €/kg</p>
+      <p class="descripcion">{{ producto.descripcion }}</p>
+
+      <div class="botones-producto">
+        <!-- FORMULARIO DE CARRITO -->
+        <form method="POST" action="{{ url_for('agregar_carrito', id=producto.id_producto) }}">
+          <label for="cantidad">Cantidad</label>
+          <input type="number" id="cantidad" name="cantidad" value="1" min="0">
+          <button type="submit" class="boton-faq">Añadir al carrito</button>
+        </form>
+
+        <!-- BOTÓN DE ELIMINAR PRODUCTO -->
+        <form action="{{ url_for('eliminar_producto', id=producto.id_producto) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este producto?');">
+          <button type="submit" class="boton-eliminar">🗑️ Eliminar</button>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
+
+
+
+
+ 

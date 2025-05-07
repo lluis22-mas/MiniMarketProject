@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Recetas - Mini Mercado Lloseta Haji{% endblock %}
+
+{% block content %}
+
+<section class="galeria-recetas">
+  <h1>Nuestras recetas</h1>
+  <div class="grid-recetas">
+    
+    <article class="tarjeta-receta">
+      <img src="{{ url_for('static', filename='img/recetas/ensaladadepasta.jpg') }}" alt="Ensalada de pasta">
+      <p>Ensalada de pasta</p>
+    </article>
+
+    <article class="tarjeta-receta">
+      <img src="{{ url_for('static', filename='img/recetas/tacochampiñones.jpg') }}" alt="Tacos de champiñones">
+      <p>Tacos de champiñones</p>
+    </article>
+
+    <article class="tarjeta-receta">
+      <img src="{{ url_for('static', filename='img/recetas/lasañacalabacin.jpg') }}" alt="Lasaña de calabacín">
+      <p>Lasaña de calabacín</p>
+    </article>
+
+    <article class="tarjeta-receta">
+      <img src="{{ url_for('static', filename='img/recetas/currygarbanzos.jpg') }}" alt="Curry de garbanzos y espinacas">
+      <p>Curry de garbanzos y espinacas</p>
+    </article>
+
+    <article class="tarjeta-receta">
+      <img src="{{ url_for('static', filename='img/recetas/ensaladaquinoa.jpg') }}" alt="Ensalada de quinoa">
+      <p>Ensalada de quinoa</p>
+    </article>
+
+    <article class="tarjeta-receta">
+      <img src="{{ url_for('static', filename='img/recetas/berenjenasrellenas.jpg') }}" alt="Berenjenas rellenas">
+      <p>Berenjenas rellenas</p>
+    </article>
+
+    <article class="tarjeta-receta">
+      <img src="{{ url_for('static', filename='img/recetas/pizza.jpg') }}" alt="Pizza de verduras">
+      <p>Pizza de verduras</p>
+    </article>
+
+    <article class="tarjeta-receta">
+      <img src="{{ url_for('static', filename='img/recetas/lentejas.jpg') }}" alt="Lentejas con verduras">
+      <p>Lentejas con verduras</p>
+    </article>
+
+    <article class="tarjeta-receta">
+      <img src="{{ url_for('static', filename='img/recetas/tortillaespinacas.jpg') }}" alt="Tortilla de espinacas">
+      <p>Tortilla de espinacas</p>
+    </article>
+
+    <article class="tarjeta-receta">
+      <img src="{{ url_for('static', filename='img/recetas/cremacalabaza.jpg') }}" alt="Puré de calabaza">
+      <p>Puré de calabaza</p>
+    </article>
+
+  </div>
+</section>
+
+{% endblock %}

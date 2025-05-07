@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Frutas - Mini Mercado Lloseta Haji{% endblock %}
+
+{% block content %}
+
+<section class="hero-frutas">
+  <h1>Frutas</h1>
+</section>
+
+<section class="galeria-productos">
+  <div class="grid-productos">
+    {% for producto in productos %}
+    <a href="{{ url_for('producto', nombre=producto.nombre) }}" class="tarjeta-link">
+      <article class="tarjeta">
+        <img src="{{ url_for('static', filename='img/index/' + producto.imagen) }}" alt="{{ producto.nombre }}">
+        <h3>{{ producto.nombre }}</h3>
+        <p>{{ producto.precio }} €/kg</p>  {# Puedes eliminar esta línea si no quieres mostrar el precio #}
+      </article>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="alta-producto-footer" style="text-align: center; margin: 3rem 0;">
+  <a href="{{ url_for('alta_producto') }}" class="boton-alta-producto">+ Añadir producto</a>
+</section>
+
+{% endblock %}
+
+

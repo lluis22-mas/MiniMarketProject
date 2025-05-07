@@ -1,0 +1,23 @@
+<!-- HEADER -->
+<header class="header">
+    <div class="contenedor-header">
+      <img src="{{ url_for('static', filename='img/index/fruteria logo.png') }}" alt="Logo Mini Mercado" class="logo" />
+      <nav class="navegacion">
+        <ul>
+          <li><a href="{{ url_for('index') }}">Inicio</a></li>
+          <li><a href="{{ url_for('frutas') }}">Frutas</a></li>
+          <li><a href="{{ url_for('verduras') }}">Verduras</a></li>
+          <li><a href="{{ url_for('recetas') }}">Recetas</a></li>
+          <li><a href="{{ url_for('quienessomos') }}">Quiénes somos</a></li>
+          <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+          <li><a href="#frutas">Espacio clientes</a></li>
+        </ul>
+      </nav>
+      <div class="acciones-header">
+        <a href="{{ url_for('login') }}" class="btn-login">Login</a>
+        <a href="{{ url_for('carrito') }}" class="btn-carrito">
+          <img src="{{ url_for('static', filename='img/index/carritow.png') }}" alt="Carrito" />
+        </a>        
+      </div>
+    </div>
+  </header>

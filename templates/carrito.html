@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Carrito - Mini Mercado{% endblock %}
+
+{% block content %}
+
+<section class="carrito contenedor-seccion">
+  <h1>Productos en tu carrito</h1>
+
+  <div class="grid-carrito">
+    {% for producto in productos %}
+    <article class="item-carrito">
+      <img src="{{ url_for('static', filename='img/index/' + producto.imagen) }}" alt="{{ producto.nombre }}">
+  
+      <div class="info-carrito">
+        <p><strong>{{ producto.nombre }}</strong></p>
+        <p>{{ producto.precio }} €/kg × {{ producto.cantidad }}</p>
+        <p><strong>Subtotal:</strong> {{ '%.2f' | format(producto.subtotal) }} €</p>
+  
+        <form method="POST" action="{{ url_for('agregar_carrito', id=producto.id) }}">
+          <label for="cantidad">Modificar cantidad:</label>
+          <input type="number" name="cantidad" value="{{ producto.cantidad }}" min="0">
+          <button type="submit" class="boton-faq">Actualizar</button>
+        </form>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  
+
+  <div class="total-carrito">
+    <h2>Total:</h2>
+    <p><strong>{{ '%.2f' | format(total) }} €</strong></p>
+  </div>
+
+  <div class="acciones-carrito">
+    <button class="boton-faq">Pagar y pasar a recoger</button>
+    <button class="boton-faq">Pagar y recibir a domicilio</button>
+  </div>
+</section>
+
+{% endblock %}
+
+
