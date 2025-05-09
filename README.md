@@ -1,0 +1,1 @@
+Este proyecto busca mejorar la eficiencia operativa del Mini Mercado Lloseta Hajji y ofrecer una mejor experiencia a sus clientes a través de una plataforma digital intuitiva y funcional a través del desarrollo una página que centralice la información del negocio y optimice la gestión de pedidos y consultas digitales.
