@@ -72,9 +72,31 @@ def quienessomos():
 def faq():
     return render_template('faq.html')
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM cliente WHERE email = %s AND password = %s", (email, password))
+        usuario = cursor.fetchone()
+        cursor.close()
+        conn.close()
+
+        if usuario:
+            session['usuario'] = usuario['nombre']
+            session['email'] = usuario['email']
+            session['telefono'] = usuario['telefono']
+            session['direccion'] = usuario['direccion']
+            flash(f"Bienvenido, {usuario['nombre']}!", "success")
+            return redirect(url_for('index'))
+        else:
+            flash("Credenciales incorrectas", "danger")
+
     return render_template('login.html')
+
 
 @app.route('/registro', methods=['GET', 'POST'])
 def registro():
@@ -129,17 +151,17 @@ def carrito():
 def agregar_carrito(id):
     cantidad = int(request.form.get('cantidad', 1))
 
-    # Inicializar el carrito si no existe
     if 'carrito' not in session:
         session['carrito'] = {}
 
     carrito = session['carrito']
 
-    # Eliminar si cantidad es 0
     if cantidad == 0:
         carrito.pop(str(id), None)
+        session['carrito'] = carrito
+        flash('Producto eliminado del carrito.', 'success')
+        return redirect(url_for('carrito'))
     else:
-        # Obtener producto desde la BD
         conn = get_db_connection()
         cursor = conn.cursor(dictionary=True)
         cursor.execute("SELECT * FROM producto WHERE id_producto = %s", (id,))
@@ -155,9 +177,9 @@ def agregar_carrito(id):
                 'cantidad': cantidad
             }
 
-    session['carrito'] = carrito
-    flash('Producto añadido al carrito correctamente.', 'success')
-    return redirect(url_for('producto', nombre=producto['nombre']))
+        session['carrito'] = carrito
+        flash('Producto actualizado en el carrito.', 'success')
+        return redirect(url_for('producto', nombre=producto['nombre']))
 
 
 @app.route('/alta_producto', methods=['GET', 'POST'])
@@ -199,6 +221,40 @@ def eliminar_producto(id):
     conn.close()
     flash("Producto eliminado correctamente", "success")
     return redirect(url_for('index'))
+
+@app.route('/espacio_clientes')
+def espacio_clientes():
+    return render_template('espacio_clientes.html')
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash("Has cerrado sesión correctamente.", "success")
+    return redirect(url_for('index'))
+
+@app.route('/pagar_carrito', methods=['POST'])
+def pagar_carrito():
+    modo = request.form.get('modo')
+    carrito = session.get('carrito', {})
+
+    if not carrito:
+        flash("Tu carrito está vacío.", "danger")
+        return redirect(url_for('carrito'))
+
+    total = sum(item['precio'] * item['cantidad'] for item in carrito.values())
+
+    if modo == 'recoger':
+        flash(f"¡Gracias por tu compra! Pasa a recoger tu pedido. Total: {total:.2f} €", "success")
+    elif modo == 'domicilio':
+        flash(f"¡Gracias por tu compra! Tu pedido será entregado a domicilio. Total: {total:.2f} €", "success")
+    else:
+        flash("Modo de pago no reconocido.", "danger")
+
+   
+    session['carrito'] = {}
+
+    return redirect(url_for('index'))
+
 
 
 if __name__ == '__main__':

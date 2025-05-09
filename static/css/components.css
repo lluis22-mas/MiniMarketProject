@@ -390,6 +390,32 @@ a.boton-faq {
   justify-content: center;
 }
 
+/*-- Mensaje confirmación login -- */
+
+.flash-messages {
+  margin: 1rem auto;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.alert {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
 
 
 

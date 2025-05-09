@@ -33,10 +33,18 @@
     <p><strong>{{ '%.2f' | format(total) }} €</strong></p>
   </div>
 
-  <div class="acciones-carrito">
+ <div class="acciones-carrito">
+  <form method="POST" action="{{ url_for('pagar_carrito') }}">
+    <input type="hidden" name="modo" value="recoger">
     <button class="boton-faq">Pagar y pasar a recoger</button>
+  </form>
+
+  <form method="POST" action="{{ url_for('pagar_carrito') }}">
+    <input type="hidden" name="modo" value="domicilio">
     <button class="boton-faq">Pagar y recibir a domicilio</button>
-  </div>
+  </form>
+</div>
+
 </section>
 
 {% endblock %}

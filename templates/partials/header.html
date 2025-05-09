@@ -10,14 +10,21 @@
           <li><a href="{{ url_for('recetas') }}">Recetas</a></li>
           <li><a href="{{ url_for('quienessomos') }}">Quiénes somos</a></li>
           <li><a href="{{ url_for('faq') }}">FAQ</a></li>
-          <li><a href="#frutas">Espacio clientes</a></li>
+          <li><a href="{{ url_for('espacio_clientes') }}">Espacio clientes</a></li>
         </ul>
       </nav>
       <div class="acciones-header">
-        <a href="{{ url_for('login') }}" class="btn-login">Login</a>
+        {% if session['usuario'] %}
+          <a href="{{ url_for('espacio_clientes') }}" class="btn-login">Mi cuenta</a>
+          <a href="{{ url_for('logout') }}" class="btn-login">Cerrar sesión</a>
+        {% else %}
+          <a href="{{ url_for('login') }}" class="btn-login">Login</a>
+        {% endif %}
+        
         <a href="{{ url_for('carrito') }}" class="btn-carrito">
           <img src="{{ url_for('static', filename='img/index/carritow.png') }}" alt="Carrito" />
-        </a>        
+        </a>
       </div>
+
     </div>
   </header>

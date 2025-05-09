@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Espacio Clientes - Mini Mercado{% endblock %}
+
+{% block content %}
+<section class="espacio-clientes contenedor-seccion">
+
+  {% if session['usuario'] %}
+    <h1>Hola {{ session['usuario'] }}, bienvenido a tu espacio personal</h1>
+
+    <div class="datos-usuario">
+      <p><strong>Nombre:</strong> {{ session['usuario'] }}</p>
+      <p><strong>Email:</strong> {{ session['email'] }}</p>
+      <p><strong>Teléfono:</strong> {{ session['telefono'] }}</p>
+      <p><strong>Dirección:</strong> {{ session['direccion'] }}</p>
+    </div>
+
+  {% else %}
+    <h1>Espacio Clientes</h1>
+    <p>Para ver esta sección debes <a href="{{ url_for('login') }}">iniciar sesión</a> o <a href="{{ url_for('registro') }}">registrarte</a>.</p>
+  {% endif %}
+
+</section>
+{% endblock %}
